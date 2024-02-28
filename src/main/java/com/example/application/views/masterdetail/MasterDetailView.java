@@ -110,8 +110,10 @@ public class MasterDetailView extends Div implements BeforeEnterObserver {
         binder = new BeanValidationBinder<>(SamplePerson.class);
 
         // Bind fields. This is where you'd define e.g. validation rules
-
+        // working binder.forField(firstName).bind("firstName");
         binder.bindInstanceFields(this);
+        // not working
+        binder.forField(firstName).bind("firstName");
 
         cancel.addClickListener(e -> {
             clearForm();
